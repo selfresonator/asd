@@ -3,7 +3,7 @@ var youDontNeedToWorryAboutAnythingInHere = function() {
 	var JobArray = ['Mortician', 'Broadcaster', 'Craftsperson', 'Engineer', 'Interior designer', 'Nun'];
 	var CityArray = ["Scottsdale, Arizona", "Oakland, California", "Stockton, California", "New York, NY"];
 	var emptyNetwork = [];
-	
+
 	function createNetwork(collection){
 
 		for (var i = 0; i < NameArray.length; i++) {
@@ -38,7 +38,8 @@ var joeyProfile = createNewUser('Joey Plain', 'Engineer', 'Oakland, California')
 // creating the network collection you're going to be pulling
 var allUsers = youDontNeedToWorryAboutAnythingInHere();
 // check the console to see what these look like
-
+//console.log(joeyProfile);
+//console.log(allUsers);
 
 //console.dir(ourUser);
 //console.dir(userNetwork);
@@ -46,4 +47,19 @@ var allUsers = youDontNeedToWorryAboutAnythingInHere();
 
 
 // YOUR CODE HERE
+// i) Loop through the allUsers array. On each iteration, we'll have a single user object.
+for(var i = 0; i < allUsers.length; i++) {
+	//(ii) If a user in the allUsers array is from the same city as joeyProfile, push the username into the joeyProfile friends array.
+	if(joeyProfile.city === allUsers[i]['city']) {
+		joeyProfile['friends'].push(allUsers[i]);
+		//(ii) If a user in the allUsers array has the same job as Joey, push the username into the joeyProfile coworker array.
+	}
+};
 
+//
+
+
+
+(joeyProfile.job === allUsers[i]['job']) {
+	joeyProfile['coworkers'].push(allUsers.[i]);
+}
