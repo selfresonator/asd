@@ -41,17 +41,29 @@ function testUser(){
 	}
 }
 
-function checkStore(string) {
-	for(var i = 0; i < __bookStore.length; i++) {
-		if(string === __bookStore[i.title]) {
-			return prompt('We found your book! ' + i.title  + ', by ' + i.author + '. It costs' + i.price + '. Would you like to add it to your cart?');
-		} else {
-			return 'That title was not found.';
-		}
-	}
-}
-
 var BookStore = __dontWorryAboutThis();
 var Susan = testUser();
 
 console.log(Susan);
+
+////
+
+function checkStore(book) {
+	for(var i = 0; i < BookStore.length; i++) {
+		if(book === BookStore[i.title]) {
+			var addToCart = prompt('We found your book! ' + i.title  + ', by ' + i.author + '. It costs' + i.price + '. Would you like to add it to your cart?');
+		} else {
+			return alert('That title was not found.');
+		}
+	}
+	return addToCart;
+}
+
+/*
+function checkStore(book) {
+	for(var i = 0; i < BookStore.length; i++) {
+		var book = BookStore[i];
+		console.log('Book', book);
+		if(book === BookStore[i.title])
+}
+*/
