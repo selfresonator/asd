@@ -12,7 +12,7 @@ console.log(arr.join(''));
 
 
 // EXERCISE 2------------------------
-//using a for loop which 
+//using a for loop which
 for(var i = 0; i < string.length; i++) {
   // and logging each element to the console
   console.log(string[i]);
@@ -20,14 +20,15 @@ for(var i = 0; i < string.length; i++) {
 
 
 // EXERCISE 3------------------------
-/*var i = 0;
-while(i < string.length) {
-  console.log(string[i]);
+/*
+while(string.length > 0) {
+  console.log(string[length-1]);
+  string = string.length-1
 };*/
 
 
 // EXERCISE 4------------------------
-// literal notation object handling
+// literal notation object handling, not necessary but how i initially started it
 /*myProfileObject = {
   'school': 'Telegraph Prep',
   'name': 'AJ Farley',
@@ -41,14 +42,29 @@ myProfileObject.name = 'AJ Farley';
 
 
 // EXERCISE 5------------------------
-/*var func = function(obj,name) {
+var subject = function(obj,name) {
+  greetName = name.split(' ')
   return {
-
+    'name': name,
+    'place of birth': 'Orange, CA',
+    'hobby': 'stuff',
+    'greeting': 'My first name is ' + greetName[0] + ', and my last name is ' + greetName[1] + '.'
   };
-};*/
+};
+
+var myGreeting = subject(myProfileObject,'AJ Farley');
+// console.log(myGreeting);
+// console.log(myGreeting.greeting);
 
 
 // EXERCISE 6------------------------
+var nameChecker = function(name) {
+  if(name === myGreeting.name) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 
 // EXERCISE 7------------------------
