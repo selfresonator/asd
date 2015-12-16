@@ -1,7 +1,19 @@
 
-
+/*
 // 1. Write a function, `nonsense` that takes an input `string`. This function contains another function, `blab` which alerts `string` and is immediately called inside the function `nonsense`. `blab` should look like this inside of the `nonsense` function:
+function nonsense(string) {
+	var blab = function(){
+	  alert(string);
+	}
+	setTimeout(blab, 2000);
+	return blab;
+};
 
+var blabLater = nonsense('asfkahsdih');
+var blabAgainLater = nonsense('nosofdnoean');
+
+blabLater();
+blabAgainLater();
 // 	```javascript
 // 	 var blab = function(){
 // 	   alert(string);
@@ -16,45 +28,67 @@
 
 
 // 5. Write a function with a closure. The first function should only take one argument, someone's first name, and the inner function should take one more argument, someone's last name. The inner function should console.log both the first name and the last name.
+var firstNameTrier = function(firstName) {
+	var lastNameTrier = function(lastName) {
+		console.log(firstName + ' ' + lastName);
+	};
+	return lastNameTrier;
+};
+
+var tony = firstNameTrier('tony')
+var fullTony = tony('smith')
+console.log(firstNameTrier('tony')('smith'));*/
 // 	```javascript
 // 	var lastNameTrier = function(firstName){
 // 	   //does stuff
-	
-// 	    var innerFunction = function() { 
+
+// 	    var innerFunction = function() {
 // 	        //does stuff
 // 	    };
 // 	    //maybe returns something here
 // 	};
 // 	var firstNameFarmer = lastNameTrier('Farmer'); //logs nothing
-// 	firstNameFarmer('Brown'); //logs 'Farmer Brown' 
-// 	```      
+// 	firstNameFarmer('Brown'); //logs 'Farmer Brown'
+// 	```
 // 	This function is useful in case you want to try on different last names. For example, I could use firstName again with another last name:
 
 // 	```javascript
 // 	firstNameFarmer('Jane'); //logs 'Farmer Jane'
 // 	firstNameFarmer('Lynne'); //logs 'Farmer Lynne'
-// 	```       
-       
+// 	```
+
 
 // 6. Create a `storyWriter` function that returns an object with two methods. One method, `addWords` adds a word to your story and returns the story while the other one, `erase`, resets the story back to an empty string. Here is an implementation:
+var storyWriter = function(story) {
+	return {var addWords = function(words) {
+											  return story + words;
+											}
+				  var erase = function() {
+					           story = ''
+			               return story;
+										}
+	 			 }
+}
+console.log(storyWriter());
 // 	```javascript
-// 	var farmLoveStory = storyWriter();
-// 	farmLoveStory.addWords('There was once a lonely cow.'); // 'There was once a lonely cow.'
-// 	farmLoveStory.addWords('It saw a friendly face.'); //'There was once a lonely cow. It saw a friendly face.'
-	
-// 	var storyOfMyLife = storyWriter();
-// 	storyOfMyLife.addWords('My code broke.'); // 'My code broke.'
-// 	storyOfMyLife.addWords('I ate some ice cream.'); //'My code broke. I ate some ice cream.'
-// 	storyOfMyLife.erase(); // ''
-	
-// 	```  
+var farmLoveStory = storyWriter();
+farmLoveStory.addWords('There was once a lonely cow.'); // 'There was once a lonely cow.'
+farmLoveStory.addWords('It saw a friendly face.'); //'There was once a lonely cow. It saw a friendly face.'
+console.log(farmLoveStory());
+var storyOfMyLife = storyWriter();
+storyOfMyLife.addWords('My code broke.'); // 'My code broke.'
+storyOfMyLife.addWords('I ate some ice cream.'); //'My code broke. I ate some ice cream.'
+console.log(storyOfMyLife());
+storyOfMyLife.erase(); // ''
+
+// 	```
 
 // 7. Using the module pattern, design a toaster. Use your creativity here and think about what you want your users to be able to access on the outside of your toaster vs what you don't want them to be able to touch.
-		
+
 // 	```javascript
 // 	var Toaster = function(){
 // 	    //some private methods and properties
-	    
+
 // 	    return {
 // 	      //some public methods and properties, etc
 // 	    };
@@ -64,7 +98,7 @@
 
 // [EXTRA CREDIT] Use the module pattern to design a character in a Super Mario game. Think about what actions you can control in the game and other aspects you can't control directly (example:  you can only affect your health indirectly by eating a mushroom). If you are not familiar with Super Mario, choose another simple game for this example.
 
-// [EXTRA CREDIT] Why doesn't the code below work? This is a function that should return an array of functions that console.log() each person's name as a string when invoked. Fiddle with this function and inspect how it works, then try to fix it using a closure. Be prepared to explain to a partner how it worked before, and how it works now with a closure. 
+// [EXTRA CREDIT] Why doesn't the code below work? This is a function that should return an array of functions that console.log() each person's name as a string when invoked. Fiddle with this function and inspect how it works, then try to fix it using a closure. Be prepared to explain to a partner how it worked before, and how it works now with a closure.
 
 // 	```javascript
 // 	var checkAttendanceFunc = function(nameArr){
