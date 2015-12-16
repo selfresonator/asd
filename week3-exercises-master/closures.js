@@ -60,25 +60,26 @@ console.log(firstNameTrier('tony')('smith'));*/
 
 // 6. Create a `storyWriter` function that returns an object with two methods. One method, `addWords` adds a word to your story and returns the story while the other one, `erase`, resets the story back to an empty string. Here is an implementation:
 var storyWriter = function(story) {
-	return {var addWords = function(words) {
+	return {'addWords': function(words) {
 											  return story + words;
-											}
-				  var erase = function() {
+											},
+				  'erase': function() {
 					           story = ''
 			               return story;
 										}
 	 			 }
 }
-console.log(storyWriter());
+console.log(storyWriter('stuffadudesaid'));
 // 	```javascript
 var farmLoveStory = storyWriter();
 farmLoveStory.addWords('There was once a lonely cow.'); // 'There was once a lonely cow.'
+console.log(farmLoveStory);
 farmLoveStory.addWords('It saw a friendly face.'); //'There was once a lonely cow. It saw a friendly face.'
-console.log(farmLoveStory());
+console.log(farmLoveStory);
 var storyOfMyLife = storyWriter();
 storyOfMyLife.addWords('My code broke.'); // 'My code broke.'
 storyOfMyLife.addWords('I ate some ice cream.'); //'My code broke. I ate some ice cream.'
-console.log(storyOfMyLife());
+console.log(storyOfMyLife);
 storyOfMyLife.erase(); // ''
 
 // 	```
