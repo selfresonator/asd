@@ -338,7 +338,15 @@
         // The output should be an array that is filled with nested arrays,
         //  one for each row. Each object in those nested row arrays
         //  should be a square that has a gamePiece on it.
-        
+        console.log(_.map(gameBoard, function(row) {
+          //console.log(row);
+          _.filter(row, function(square) {
+            //console.log(square);
+            if(square.gamePiece.length > 0) {
+              return square;
+            }
+          })
+        }))
 
 
       // example output: for a gameBoard that has
