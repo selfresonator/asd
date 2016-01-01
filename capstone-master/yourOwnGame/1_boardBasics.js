@@ -344,13 +344,13 @@
         // The output should be an array that is filled with nested arrays,
         //  one for each row. Each object in those nested row arrays
         //  should be a square that has a gamePiece on it.
-        console.log(_.map(gameBoard, function(row) {
+        _.map(gameBoard, function(row) {
           return _.filter(row, function(square) {
             if(square.gamePiece) {
               return square;
             }
           })
-        }));
+        });
 
 
       // example output: for a gameBoard that has

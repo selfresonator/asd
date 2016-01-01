@@ -28,10 +28,10 @@
 // That would look like so:
 
   var testArr = [6,7,8,9,10];
-  var sum = _.reduce(testArr, function(accumulated, current) {
-    return accumulated + current;
-  });
-
+  // var sum = _.reduce(testArr, function(accumulated, current) {
+  //   return accumulated + current;
+  // });
+  //
   // console.log('the sum returned from reduce is:',sum);
 
   // Let's break this down for a moment.
@@ -68,7 +68,10 @@
   // Let's use reduce to
     //  add together all the values
     //  in our codingPoints object.
-
+    // var test = _.reduce(codingPoints, function(acc, current) {
+    //   return acc + current;
+    // })
+    // console.log(test);
   // reduce also takes an optional starting value
     //    that we haven't been giving it yet.
     //  What is this starting value used for?
@@ -79,14 +82,16 @@
     //  All you need to do is put it after a comma after the callback function,
     //  like so:
 
-    var pointTotal = _.reduce(codingPoints, function(accumulated, current) {
-      //callback logic goes here
-    }, 10);
-
+    // var pointTotal = _.reduce(codingPoints, function(accumulated, current) {
+    //   return accumulated + current;
+    // }, 10);
+    // console.log(pointTotal);
     // Try writing a new invocation of reduce that
       //  gives yourself 50 starting codingPoints and
       //  then sums up the rest of the codingPoints.
-
+      // console.log(_.reduce(codingPoints, function(iter, curry) {
+      //   return iter + curry;
+      // }, 50));
       // Remember that reduce returns a value.
       //  Feel free to store it in a variable if you like.
 
@@ -116,6 +121,14 @@
     // So we'd expect to get the following: [1200, 8000000]
     // HINT: you can pass in anything you want as a starting value,
     //   even an empty array.
+    var time = _.reduce(codingPoints, function(acc, current) {
+      if (current > 1000) {
+        return current + [acc];
+      }
+    }, [])
+    console.log(time);
+
+
 
   // Now let's think through how we could use reduce to turn an
     //  array of nested arrays into a single array.
@@ -130,6 +143,12 @@
     //   push it into an accumulated array.
     // When in doubt, pseudocode!
     // Make sure you're using reduce for this!
+    var tester = _.reduce(nestedArrs, function(key, value) {
+      _.map(key, function(value) {
+        return key.push(value);
+      })
+    });
+    console.log(tester);
 
   // Another interesting use of reduce is with booleans.
 
