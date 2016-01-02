@@ -46,10 +46,11 @@
   //  holds the names of each of the pieces we'll create for each player.
       //  For example:
       //  ['kuddlyKoala', 'babyDino','babyDino', 'babyDino', 'fierceDragon', 'lazyPanda', 'lazyPanda']
+      var piecesToAdd = ['babyDino','snake','bear','lilBat','dragon'];
 
   // 2. Create an array of the playerNames.
     //  For example: ['hermoineGranger', 'graceHopper']
-
+    var playerNames = ['dude','bruh','homie','twon'];
   // 3. Now use two (nested) each loops to add these pieces to the board.
   //  Remember that we have the makePiece function!
 
