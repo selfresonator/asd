@@ -28,9 +28,9 @@
 // That would look like so:
 
   var testArr = [6,7,8,9,10];
-  // var sum = _.reduce(testArr, function(accumulated, current) {
-  //   return accumulated + current;
-  // });
+  var sum = _.reduce(testArr, function(accumulated, current) {
+    return accumulated + current;
+  });
   //
   // console.log('the sum returned from reduce is:',sum);
 
@@ -68,9 +68,9 @@
   // Let's use reduce to
     //  add together all the values
     //  in our codingPoints object.
-    // var test = _.reduce(codingPoints, function(acc, current) {
-    //   return acc + current;
-    // })
+    var test = _.reduce(codingPoints, function(acc, current) {
+      return acc + current;
+    })
     // console.log(test);
   // reduce also takes an optional starting value
     //    that we haven't been giving it yet.
@@ -82,16 +82,17 @@
     //  All you need to do is put it after a comma after the callback function,
     //  like so:
 
-    // var pointTotal = _.reduce(codingPoints, function(accumulated, current) {
-    //   return accumulated + current;
-    // }, 10);
+    var pointTotal = _.reduce(codingPoints, function(accumulated, current) {
+      return accumulated + current;
+    }, 10);
     // console.log(pointTotal);
     // Try writing a new invocation of reduce that
       //  gives yourself 50 starting codingPoints and
       //  then sums up the rest of the codingPoints.
-      // console.log(_.reduce(codingPoints, function(iter, curry) {
-      //   return iter + curry;
-      // }, 50));
+      var test1 = _.reduce(codingPoints, function(iter, curry) {
+        return iter + curry;
+      }, 50);
+      // console.log(test1)
       // Remember that reduce returns a value.
       //  Feel free to store it in a variable if you like.
 
@@ -121,12 +122,13 @@
     // So we'd expect to get the following: [1200, 8000000]
     // HINT: you can pass in anything you want as a starting value,
     //   even an empty array.
-    var time = _.reduce(codingPoints, function(acc, current) {
-      if (current > 1000) {
-        return current + [acc];
+    var test2 = _.reduce(codingPoints, function(curr, acc) {
+      if (acc > 1000) {
+        curr.push(acc);
       }
+      return curr;
     }, [])
-    console.log(time);
+    // console.log(test2);
 
 
 
@@ -143,12 +145,13 @@
     //   push it into an accumulated array.
     // When in doubt, pseudocode!
     // Make sure you're using reduce for this!
-    var tester = _.reduce(nestedArrs, function(key, value) {
-      _.map(key, function(value) {
-        return key.push(value);
+    var test3 = _.reduce(nestedArrs, function(curr, arr) {
+      _.each(arr, function(value) {
+        curr.push(value);
       })
-    });
-    console.log(tester);
+      return curr;
+    }, []);
+    // console.log(test3);
 
   // Another interesting use of reduce is with booleans.
 
@@ -172,8 +175,10 @@
         // 2. AND whether we're friends with everyone who came before
         //    (accumulated value)
 
-      _.reduce(friends, function(accumulated, current) {
-
+      var checkFriends = _.reduce(friends, function(accumulated, current) {
+        if(accumulated) {
+          accumulated = true;
+        }
     // This will return true ONLY IF
       //  both the current value is true,
       //  and the result of all accumulated iterations is true too.
@@ -183,16 +188,25 @@
 
       }, true); //start with true.
 
+      // console.log(checkFriends);
+
     // What happens if we start with false?
 
     // Now let's put this to use another way.
 
-      var bouncersNightmare= {ashley: 22, bobby:23, camila:25, gabriela:22, ben:21, miranda:24, jayden:22, sofia:23, matias:21, hannah:21, makayla:23, justin:22, isaiah:25, caleb:22, chloe:24};
+      var bouncersNightmare= {ashley:22, bobby:20, camila:25, gabriela:22, ben:21, miranda:24, jayden:22, sofia:23, matias:21, hannah:21, makayla:23, justin:22, isaiah:25, caleb:22, chloe:24};
 
       // Let's make this poor bouncer's job a bit easier by
         //  reducing this collection down to a single true or false value
         //  for whether or not everyone in this group is at least 21.
+        var bouncer = _.reduce(bouncersNightmare, function(initial, value) {
+          if (value < 21) {
+            initial = false;
+          }
+          return initial
+        }, true)
 
+        // console.log(bouncer);
         // Use reduce to turn bouncersNightmare into a single boolean value
         //   certifying whether everyone in the collection is at least 21.
 
