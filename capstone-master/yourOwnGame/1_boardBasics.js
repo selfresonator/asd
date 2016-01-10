@@ -328,16 +328,16 @@
 
     // Now try adding gamePieces to a couple of different rows throughout
       //  the board using this makePiece funcion.
-      makePiece(gameBoard, [5,3],'lilBat');
+      var lilBat = makePiece(gameBoard, [5,3],'lilBat');
       gameBoard[5][3].gamePiece.imageURL = "http://findicons.com/files/icons/2711/free_icons_for_windows8_metro/128/bat.png";
 
-      makePiece(gameBoard, [2,1],'sssnake');
+      var sssnake = makePiece(gameBoard, [2,1],'sssnake');
       gameBoard[2][1].gamePiece.imageURL = "http://icons.iconarchive.com/icons/icons8/windows-8/128/Astrology-Year-Of-Snake-icon.png";
 
-      makePiece(gameBoard, [5,7],'bear');
+      var bear = makePiece(gameBoard, [5,7],'bear');
       gameBoard[5][7].gamePiece.imageURL = "http://www.iconsdb.com/icons/preview/black/bear-5-xxl.png";
 
-      makePiece(gameBoard, [6,0],'dragon');
+      var dragon = makePiece(gameBoard, [6,0],'dragon');
       gameBoard[6][0].gamePiece.imageURL = "http://www.cs.toronto.edu/~guerzhoy/180/dragon/dragon2.png";
 
       // Go ahead and find all the pieces on the whole board, organized by row.

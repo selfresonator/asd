@@ -46,18 +46,23 @@
   //  holds the names of each of the pieces we'll create for each player.
       //  For example:
       //  ['kuddlyKoala', 'babyDino','babyDino', 'babyDino', 'fierceDragon', 'lazyPanda', 'lazyPanda']
-      var piecesToAdd = ['babyDino','snake','bear','lilBat','dragon'];
+      var piecesToAdd = ['babyDino','snake','dragon','bear','lilBat'];
+      // ('bear','lilBat')
 
   // 2. Create an array of the playerNames.
     //  For example: ['hermoineGranger', 'graceHopper']
-    var playerNames = ['dude','bruh','homie','twon'];
+    var playerNames = ['dude','bruh'];
   // 3. Now use two (nested) each loops to add these pieces to the board.
   //  Remember that we have the makePiece function!
 
     // Question1:
       //  How can you make sure each piece ends up
       //  on a different square on the board?
-
+      _.each(gameBoard, function(row) {
+        _.each(row, function(square,key) {
+          square.gamePiece = makePiece(gameBoard, [0,1], piecesToAdd[key], playerNames[key]);
+        })
+      })
     // Question2:
       //  What happens when you get to the end of a line?
 
