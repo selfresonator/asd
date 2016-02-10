@@ -11,6 +11,13 @@ function new(stuff) {
   console.log(stuff);
 }
 
+function new(thing) {
+  console.log(thing);
+}
+
+function new(stuff) {
+  console.log(stuff);
+}
 
 // ********** CALLBACK EXERCISES **********
 
