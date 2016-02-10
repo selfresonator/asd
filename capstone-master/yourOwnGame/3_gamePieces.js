@@ -63,6 +63,7 @@
           square.gamePiece = makePiece(gameBoard, [0,1], piecesToAdd[key], playerNames[key]);
         })
       })
+      
     // Question2:
       //  What happens when you get to the end of a line?
 
