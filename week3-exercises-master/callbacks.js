@@ -6,6 +6,12 @@
 function new(thing) {
   console.log(thing);
 }
+
+function new(stuff) {
+  console.log(stuff);
+}
+
+
 // ********** CALLBACK EXERCISES **********
 
 // Let's do a quick review of functions.
