@@ -3,7 +3,9 @@
   // Uncomment the script for today's callback exercises.
   // You can go ahead and comment out other scripts so that your console doesn't get unnecessarily cluttered.
 
-
+function new(thing) {
+  console.log(thing);
+}
 // ********** CALLBACK EXERCISES **********
 
 // Let's do a quick review of functions.
